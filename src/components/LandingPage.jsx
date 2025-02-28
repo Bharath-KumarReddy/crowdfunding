@@ -32,7 +32,7 @@ const LandingPage = () => {
           transition={{ delay: 0.8, duration: 1 }}
         >
           <motion.button
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/login")}
             className="bg-yellow-400 text-blue-900 font-semibold px-6 py-4 rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-500 transition transform hover:scale-105"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

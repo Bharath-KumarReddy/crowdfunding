@@ -22,12 +22,7 @@ const Navbar = () => {
             Campaigns
           </Link>
         </div>
-        <Link
-          to="/login"
-          className="bg-yellow-400 text-blue-900 font-semibold px-4 py-2 rounded-full shadow-md hover:bg-yellow-500 transition duration-300"
-        >
-          Login
-        </Link>
+        
       </div>
     </nav>
   );

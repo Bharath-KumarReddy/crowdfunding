@@ -1,21 +1,43 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const LoginPage = () => {
   
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      
+      const response = await axios.post('http://localhost:5000/api/auth/login', {
+        email,
+        password,
+      });
+      localStorage.setItem('token', response.data.token);
+      toast.success("Logged in successfully", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
+      navigate("/home");
+    } catch (error) {
+      console.error(error.message);
+      toast.error(`${error.message}`);
+    }
   };
 
  
-
   return (
     <div className="min-h-screen w-screen flex items-center justify-center">
       <div
