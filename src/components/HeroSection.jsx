@@ -32,7 +32,7 @@ const HeroSection = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          Explore Campaigns
+          Create Campaigns
         </motion.button>
       </div>
     </motion.div>

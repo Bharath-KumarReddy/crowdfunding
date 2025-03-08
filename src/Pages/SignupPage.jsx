@@ -28,6 +28,7 @@ const SignupPage = () => {
 
       // console.log(data);
       console.log(data.data);
+
       toast.success("User created successfully",{
         position: "top-right",
         autoClose: 5000,
@@ -37,11 +38,15 @@ const SignupPage = () => {
         draggable: true,
         progress: undefined,
       });
+
+      navigate('/login');
       
     } catch (error) {
        console.log(error);
        toast.error(`${error.message}`)
     }
+
+
   };
 
   return (
